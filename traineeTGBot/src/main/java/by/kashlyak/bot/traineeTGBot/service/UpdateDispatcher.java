@@ -1,11 +1,9 @@
 package by.kashlyak.bot.traineeTGBot.service;
 
-import by.kashlyak.bot.traineeTGBot.Processor.NonSupported;
+import by.kashlyak.bot.traineeTGBot.utils.Processor.NonSupported;
 import by.kashlyak.bot.traineeTGBot.bean.user.Person;
-import by.kashlyak.bot.traineeTGBot.enums.BotCommand;
+import by.kashlyak.bot.traineeTGBot.utils.enums.BotCommand;
 import by.kashlyak.bot.traineeTGBot.mainclass.TraineeBot;
-import by.kashlyak.bot.traineeTGBot.service.MessageResponse;
-import by.kashlyak.bot.traineeTGBot.service.MessageService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,7 +27,6 @@ public class UpdateDispatcher {
                 messageService.sendMessage(update.getMessage(), " ");
                 break;
             case START:
-
                 messageService.sendMessage(update.getMessage(), "Приветсвую");
                 break;
             case HELLO:

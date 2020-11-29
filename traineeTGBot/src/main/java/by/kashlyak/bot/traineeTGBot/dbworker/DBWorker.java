@@ -9,10 +9,10 @@ public class DBWorker {
     private static final String PASSWORD = LoggingDB.getPASSWORD();
 
     private static final String INSERT_CHATID = "insert into personal_information_from_bot(chatId) values(?);";
-    private static final String UPDATE_FULLNAME = "UPDATE personal_information_from_bot SET fullName = (?) where chatId=(?);";
-    private static final String UPDATE_AGE = "UPDATE personal_information_from_bot set age = (?) where chatId=(?);";
-    private static final String UPDATE_ADDRESS = "UPDATE personal_information_from_bot set address = (?) where chatId=(?);";
-    private static final String GET_INFO_FROM_ID = "select * from personal_information_from_bot where chatId=(?);";
+    private static final String UPDATE_FULLNAME = "UPDATE personal_information_from_bot SET fullName = (?) where chatId = (?);";
+    private static final String UPDATE_AGE = "UPDATE personal_information_from_bot set age = (?) where chatId = (?);";
+    private static final String UPDATE_ADDRESS = "UPDATE personal_information_from_bot set address = (?) where chatId = (?);";
+    private static final String GET_INFO_FROM_ID = "select * from personal_information_from_bot where chatId = (?);";
 
     static {
         try {

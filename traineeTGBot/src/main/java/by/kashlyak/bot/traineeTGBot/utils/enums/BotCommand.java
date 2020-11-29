@@ -1,4 +1,4 @@
-package by.kashlyak.bot.traineeTGBot.enums;
+package by.kashlyak.bot.traineeTGBot.utils.enums;
 
 public enum BotCommand {
     NONE("", ""),

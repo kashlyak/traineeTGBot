@@ -29,6 +29,5 @@ public class WorkWithDBFromMessage {
     public void editChatIdForPersonFromMessage(Update update) {
         person.setChatId(update.getMessage().getChatId());
         DBWorker.writeChatIdOnDB(person.getChatId());
-
     }
 }

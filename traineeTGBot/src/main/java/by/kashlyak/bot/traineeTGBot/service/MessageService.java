@@ -1,7 +1,7 @@
 package by.kashlyak.bot.traineeTGBot.service;
 
-import by.kashlyak.bot.traineeTGBot.enums.BotCommand;
-import by.kashlyak.bot.traineeTGBot.bean.buttons.Buttons;
+import by.kashlyak.bot.traineeTGBot.utils.enums.BotCommand;
+import by.kashlyak.bot.traineeTGBot.utils.buttons.Buttons;
 import by.kashlyak.bot.traineeTGBot.bean.user.Person;
 import by.kashlyak.bot.traineeTGBot.dbworker.DBWorker;
 import by.kashlyak.bot.traineeTGBot.mainclass.TraineeBot;
@@ -69,9 +69,7 @@ public class MessageService {
                 } catch (TelegramApiException e) {
                     e.printStackTrace();
                 }
-
             }
-
             try {
                 Buttons.setButton(sendMessage);
                 traineeBot.execute(sendMessage);
@@ -82,20 +80,7 @@ public class MessageService {
         }
     }
 
-    public void sendPhoto(Message message, String photoId) {
-        SendPhoto sendPhoto = new SendPhoto();
-        sendPhoto.setChatId(message.getChatId());
-        sendPhoto.setPhoto(photoId);
-        sendPhoto.setCaption("Вот что вы прислали.");
-        try {
-            Buttons.setButton(new SendMessage());
-            traineeBot.execute(sendPhoto);
 
-        } catch (TelegramApiException e) {
-            e.printStackTrace();
-        }
-
-    }
 
     public void sendMessageForButtons(Update update) {
         try {
@@ -141,6 +126,19 @@ public class MessageService {
         sendPhoto(update.getMessage(), f_id);
 
     }
+    public void sendPhoto(Message message, String photoId) {
+        SendPhoto sendPhoto = new SendPhoto();
+        sendPhoto.setChatId(message.getChatId());
+        sendPhoto.setPhoto(photoId);
+        sendPhoto.setCaption("Вот что вы прислали.");
+        try {
+            Buttons.setButton(new SendMessage());
+            traineeBot.execute(sendPhoto);
 
+        } catch (TelegramApiException e) {
+            e.printStackTrace();
+        }
+
+    }
 
 }
