@@ -1,4 +1,6 @@
-package by.kashlyak.bot.traineeTGBot.bean;
+package by.kashlyak.bot.traineeTGBot.service;
+
+import by.kashlyak.bot.traineeTGBot.Processor.CommandProcessor;
 
 public class MessageResponse {
     private Long chatId;
@@ -11,9 +13,10 @@ public class MessageResponse {
         this.chatId = chatId;
         this.response = processor.getResponse();
     }
-    public MessageResponse (long chatId, String response) {
+
+    public MessageResponse(long chatId, String response) {
         this.chatId = chatId;
-        this.response =response;
+        this.response = response;
     }
 
     public Long getChatId() {

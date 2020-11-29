@@ -1,20 +1,21 @@
-package by.kashlyak.bot.traineeTGBot.bean;
+package by.kashlyak.bot.traineeTGBot.enums;
 
 public enum BotCommand {
-    NONE("",""),
+    NONE("", ""),
     START("/start", "Стартуем"),
     HELLO("/hello", "Приветсвтие"),
-    BYE("/bye", "Пока-пока"),
-    INFO("Ввести личную информацию", "ФИО, Возраст, Адрес"),
-    FIO("fio", "Введите ваши Имя И Фамилию"),
-    ADDRESS("address", "Введите адрес"),
-    AGE("age", "Введите Ваш возраст");
+    INFO("Показать мои данные", "Пока-пока"),
+    INSERT_INFO("Ввести личную информацию", "ФИО, Возраст, Адрес"),
+    FIO("FIO", "личную"),
+    ADDRESS("ADDRESS", "ADDRESS"),
+    AGE("AGE", "AGE"),
+    PHOTO("PHOTO", "PHOTO");
     final String command;
     final String description;
 
     BotCommand(String command, String description) {
         this.command = command;
-        this.description=description;
+        this.description = description;
     }
 
     public String getCommand() {
@@ -31,16 +32,18 @@ public enum BotCommand {
                 return START;
             case "/hello":
                 return HELLO;
-            case "/bye":
-                return BYE;
-            case "Ввести личную информацию":
+            case "Показать мои данные":
                 return INFO;
-            case "fio":
+            case "Ввести личную информацию":
+                return INSERT_INFO;
+            case "FIO":
                 return FIO;
-            case "age":
+            case "AGE":
                 return AGE;
-            case "address":
+            case "ADDRESS":
                 return ADDRESS;
+            case "Загрузить фотографию":
+                return PHOTO;
             default:
                 return NONE;
 
